@@ -7,11 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="rate_based_billing_records")
+//@Table(name="rate_based_billing_records")
 public class RateBasedBillingRecord extends BillingRecord {
 
-	public RateBasedBillingRecord(Date creationDate, String description, Set <InvoiceLineItem> lineItems, Company company){
-		super(creationDate, description, lineItems, company);
+	public RateBasedBillingRecord(Date creationDate, String description, InvoiceLineItem lineItem, Company company){
+		super(creationDate, description, lineItem, company);
 	}
 	
 	private int rate;
@@ -19,8 +19,8 @@ public class RateBasedBillingRecord extends BillingRecord {
 	
 	public RateBasedBillingRecord() {};
 	
-	public RateBasedBillingRecord(Date creationDate, String description, Set <InvoiceLineItem> lineItems, Company company, int rate, int quantity){
-		super(creationDate, description, lineItems, company);
+	public RateBasedBillingRecord(Date creationDate, String description, InvoiceLineItem lineItem, Company company, int rate, int quantity){
+		super(creationDate, description, lineItem, company);
 		this.rate = rate;
 		this.quantity = quantity;
 	}

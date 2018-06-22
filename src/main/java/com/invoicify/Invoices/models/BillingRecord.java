@@ -23,17 +23,17 @@ public abstract class BillingRecord {
 	protected String description;
 	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy="billingRecord")
-	protected Set <InvoiceLineItem> lineItems;
+	protected InvoiceLineItem lineItem;
 	
 	@ManyToOne
 	protected Company company;
 	
 	public BillingRecord() {};
 	
-	public BillingRecord( Date createdOn, String description, Set <InvoiceLineItem> lineItems, Company company) {
+	public BillingRecord( Date createdOn, String description, InvoiceLineItem lineItem, Company company) {
 		this.createdOn = createdOn;
 		this.description = description;
-		this.lineItems = lineItems;
+		this.lineItem = lineItem;
 		this.company = company;
 	}
 	
@@ -63,12 +63,12 @@ public abstract class BillingRecord {
 		this.description = description;
 	}
 
-	public Set<InvoiceLineItem> getLineItems() {
-		return lineItems;
+	public InvoiceLineItem getLineItem() {
+		return lineItem;
 	}
 
-	public void setLineItems(Set<InvoiceLineItem> lineItems) {
-		this.lineItems = lineItems;
+	public void setLineItem(InvoiceLineItem lineItem) {
+		this.lineItem = lineItem;
 	}
 
 	public Company getCompany() {

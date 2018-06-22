@@ -23,8 +23,8 @@ public class Invoice {
 	private Date createdOn;
 	private String invoiceDescription; 
 	
-	@OneToMany(mappedBy="invoices", cascade=CascadeType.ALL)
-	Set <InvoiceLineItem> lineItems; 
+	@OneToMany(mappedBy="invoice", cascade=CascadeType.ALL)
+	Set<InvoiceLineItem> lineItems; 
 	
 	@ManyToOne
 	Company company; 
