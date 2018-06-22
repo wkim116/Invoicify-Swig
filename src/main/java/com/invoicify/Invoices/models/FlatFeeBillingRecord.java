@@ -7,19 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="flat_fee_billing_records")
+//@Table(name="flat_fee_billing_records")
 public class FlatFeeBillingRecord extends BillingRecord {
 	
-	public FlatFeeBillingRecord(Date creationDate, String description, Set <InvoiceLineItem> lineItems, Company company){
-		super(creationDate, description, lineItems, company);
+	public FlatFeeBillingRecord(Date creationDate, String description, InvoiceLineItem lineItem, Company company){
+		super(creationDate, description, lineItem, company);
 	}
 	
 	int amount;
 	
 	public FlatFeeBillingRecord() {};
 	
-	public FlatFeeBillingRecord(Date creationDate, String description, Set <InvoiceLineItem> lineItems, Company company, int amount){
-		super(creationDate, description, lineItems, company);
+	public FlatFeeBillingRecord(Date creationDate, String description, InvoiceLineItem lineItem, Company company, int amount){
+		super(creationDate, description, lineItem, company);
 		this.amount = amount;
 	}
 	

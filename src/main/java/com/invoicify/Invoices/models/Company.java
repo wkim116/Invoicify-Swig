@@ -13,7 +13,6 @@ import javax.persistence.Table;
 public class Company {
 	@Id
 	@GeneratedValue
-	
 	private int id;
 	private String name; 
 	
