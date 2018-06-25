@@ -4,25 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.invoicify.Invoices.models.BillingRecord;
 import com.invoicify.Invoices.repositories.BillingRecordRepository;
 
-@Controller
+@RestController
+@RequestMapping("/api/billing-record")
 public class BillingRecordController {
-		
+
 	@Autowired
-	private BillingRecordRepository billingRecordRepo;
+	private BillingRecordRepository billingRepository;
+
+	  BillingRecordController(BillingRecordRepository billingRepository) {
+	    this.billingRepository = billingRepository;
+	  }
 	
-	//Default Constructor
-	public BillingRecordController() {}
-	
-	//Method to return all Billing Records in the database
-	public List<BillingRecord> list() {
-		List<BillingRecord> billingRecords = new ArrayList<BillingRecord>();
-		billingRecords = billingRecordRepo.findAll();
-		return billingRecords;
-	}
-	
+	//Get a list of all the invoices in the invoice repo
+		@GetMapping
+		public List<BillingRecord> list() {
+			return billingRepository.findAll();
+		}
 }
