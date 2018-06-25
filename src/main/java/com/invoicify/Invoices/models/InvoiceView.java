@@ -3,10 +3,10 @@ package com.invoicify.Invoices.models;
 public class InvoiceView {
 
 	private String invoiceDescription;
-	private long[] recordIds;
+	private int[] recordIds;
 	
 	InvoiceView(){};
-	InvoiceView(String invoiceDescription, long[] recordIds){
+	InvoiceView(String invoiceDescription, int[] recordIds){
 		this.invoiceDescription = invoiceDescription;
 		this.recordIds = recordIds;
 	}
@@ -16,10 +16,10 @@ public class InvoiceView {
 	public void setInvoiceDescription(String invoiceDescription) {
 		this.invoiceDescription = invoiceDescription;
 	}
-	public long[] getRecordIds() {
+	public int[] getRecordIds() {
 		return recordIds;
 	}
-	public void setRecordIds(long[] recordIds) {
+	public void setRecordIds(int[] recordIds) {
 		this.recordIds = recordIds;
 	}
 }
