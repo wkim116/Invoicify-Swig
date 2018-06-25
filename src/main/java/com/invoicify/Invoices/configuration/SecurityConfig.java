@@ -14,11 +14,11 @@ import com.invoicify.Invoices.services.AppUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private AppUserDetailsService userDetailsService;
 
-    public SecurityConfiguration(AppUserDetailsService userDetailsService) {
+    public SecurityConfig(AppUserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 
