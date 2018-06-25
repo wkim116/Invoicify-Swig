@@ -28,13 +28,17 @@ public abstract class BillingRecord {
 	@ManyToOne
 	protected Company company;
 	
+	@ManyToOne
+	protected String createdBy;
+	
 	public BillingRecord() {};
 	
-	public BillingRecord( Date createdOn, String description, InvoiceLineItem lineItem, Company company) {
+	public BillingRecord( Date createdOn, String description, InvoiceLineItem lineItem, Company company, String createdBy) {
 		this.createdOn = createdOn;
 		this.description = description;
 		this.lineItem = lineItem;
 		this.company = company;
+		this.createdBy = createdBy;
 	}
 	
 	abstract double getTotal();
@@ -77,5 +81,13 @@ public abstract class BillingRecord {
 
 	public void setCompany(Company company) {
 		this.company = company;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
 }

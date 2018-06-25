@@ -24,10 +24,13 @@ public class Invoice {
 	private String invoiceDescription; 
 	
 	@OneToMany(mappedBy="invoice", cascade=CascadeType.ALL)
-	Set<InvoiceLineItem> lineItems; 
+	private Set<InvoiceLineItem> lineItems; 
 	
 	@ManyToOne
-	Company company; 
+	private Company company;
+	
+	@ManyToOne
+	private String createdBy;
 	
 	public Invoice () {}
 	
@@ -76,6 +79,14 @@ public class Invoice {
 
 	public void setCompany(Company company) {
 		this.company = company;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
 	
 
