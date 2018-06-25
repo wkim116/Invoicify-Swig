@@ -1,6 +1,7 @@
 package com.invoicify.Invoices.models;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -24,7 +25,7 @@ public class Invoice {
 	private String invoiceDescription; 
 	
 	@OneToMany(mappedBy="invoice", cascade=CascadeType.ALL)
-	private Set<InvoiceLineItem> lineItems; 
+	private List<InvoiceLineItem> lineItems; 
 	
 	@ManyToOne
 	private Company company;
@@ -34,7 +35,7 @@ public class Invoice {
 	
 	public Invoice () {}
 	
-	public Invoice (Date createdOn, String invoiceDescription,Set <InvoiceLineItem> lineItems, Company company) {
+	public Invoice (Date createdOn, String invoiceDescription,List <InvoiceLineItem> lineItems, Company company) {
 		this.createdOn = createdOn;
 		this.invoiceDescription = invoiceDescription;
 		this.lineItems = lineItems; 
@@ -65,12 +66,12 @@ public class Invoice {
 		this.invoiceDescription = invoiceDescription;
 	}
 
-	public Set<InvoiceLineItem> getLineItems() {
+	public List<InvoiceLineItem> getLineItems() {
 		return lineItems;
 	}
 
-	public void setLineItems(Set<InvoiceLineItem> lineItems) {
-		this.lineItems = lineItems;
+	public void setLineItems(List<InvoiceLineItem> items) {
+		this.lineItems = items;
 	}
 
 	public Company getCompany() {

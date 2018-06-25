@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.apache.catalina.User;
+
 @Entity
 @Table(name="billing_records")
 public abstract class BillingRecord {
@@ -29,11 +31,11 @@ public abstract class BillingRecord {
 	protected Company company;
 	
 	@ManyToOne
-	protected String createdBy;
+	protected User createdBy;
 	
 	public BillingRecord() {};
 	
-	public BillingRecord( Date createdOn, String description, InvoiceLineItem lineItem, Company company, String createdBy) {
+	public BillingRecord( Date createdOn, String description, InvoiceLineItem lineItem, Company company, User createdBy) {
 		this.createdOn = createdOn;
 		this.description = description;
 		this.lineItem = lineItem;
@@ -83,11 +85,11 @@ public abstract class BillingRecord {
 		this.company = company;
 	}
 
-	public String getCreatedBy() {
+	public User getCreatedBy() {
 		return createdBy;
 	}
 
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
+	public void setCreatedBy(User user) {
+		this.createdBy = user;
 	}
 }
