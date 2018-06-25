@@ -30,7 +30,7 @@ public class Invoice {
 	private Company company;
 	
 	@ManyToOne
-	private String createdBy;
+	private User createdBy;
 	
 	public Invoice () {}
 	
@@ -81,11 +81,11 @@ public class Invoice {
 		this.company = company;
 	}
 
-	public String getCreatedBy() {
+	public User getCreatedBy() {
 		return createdBy;
 	}
 
-	public void setCreatedBy(String createdBy) {
+	public void setCreatedBy(User createdBy) {
 		this.createdBy = createdBy;
 	}
 	

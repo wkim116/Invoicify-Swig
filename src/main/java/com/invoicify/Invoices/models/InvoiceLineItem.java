@@ -26,7 +26,7 @@ public class InvoiceLineItem {
 	private Invoice invoice;
 	
 	@ManyToOne
-	private String createdBy;
+	private User createdBy;
 	
 	public InvoiceLineItem() {};
 	
@@ -68,11 +68,11 @@ public class InvoiceLineItem {
 		this.invoice = invoice;
 	}
 
-	public String getCreatedBy() {
+	public User getCreatedBy() {
 		return createdBy;
 	}
 
-	public void setCreatedBy(String createdBy) {
+	public void setCreatedBy(User createdBy) {
 		this.createdBy = createdBy;
 	}
 }

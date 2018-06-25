@@ -29,11 +29,11 @@ public abstract class BillingRecord {
 	protected Company company;
 	
 	@ManyToOne
-	protected String createdBy;
+	protected User createdBy;
 	
 	public BillingRecord() {};
 	
-	public BillingRecord( Date createdOn, String description, InvoiceLineItem lineItem, Company company, String createdBy) {
+	public BillingRecord( Date createdOn, String description, InvoiceLineItem lineItem, Company company, User createdBy) {
 		this.createdOn = createdOn;
 		this.description = description;
 		this.lineItem = lineItem;
@@ -83,11 +83,11 @@ public abstract class BillingRecord {
 		this.company = company;
 	}
 
-	public String getCreatedBy() {
+	public User getCreatedBy() {
 		return createdBy;
 	}
 
-	public void setCreatedBy(String createdBy) {
+	public void setCreatedBy(User createdBy) {
 		this.createdBy = createdBy;
 	}
 }
