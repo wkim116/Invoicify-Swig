@@ -36,6 +36,9 @@ public class InvoiceController {
 	@Autowired
 	private BillingRecordRepository billingRepository;
 	
+	public InvoiceController() {
+		
+	}
 	
 	public InvoiceController(InvoiceRepository invoiceRepo) {
 		this.invoiceRepository = invoiceRepo;
