@@ -2,6 +2,7 @@ package com.invoicify.Invoices.models;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class InvoiceLineItem {
     private int id;
 	
 	@JsonIgnore
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private BillingRecord billingRecord;
 	
 	private Date createdOn;
