@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class FlatFeeBillingRecord extends BillingRecord {
 	
 	public FlatFeeBillingRecord(Date creationDate, String description, InvoiceLineItem lineItem, Company company, User createdBy){
-		super(creationDate, description, lineItem, company, createdBy);
+		//super(creationDate, description, lineItem, company, createdBy);
 	}
 	
 	int amount;
@@ -19,7 +19,7 @@ public class FlatFeeBillingRecord extends BillingRecord {
 	public FlatFeeBillingRecord() {};
 	
 	public FlatFeeBillingRecord(Date creationDate, String description, InvoiceLineItem lineItem, Company company, User createdBy, int amount){
-		super(creationDate, description, lineItem, company, createdBy);
+		//super(creationDate, description, lineItem, company, createdBy);
 		this.amount = amount;
 	}
 	

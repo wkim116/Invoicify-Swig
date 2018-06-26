@@ -33,13 +33,13 @@ public abstract class BillingRecord {
 	
 	public BillingRecord() {};
 	
-	public BillingRecord( Date createdOn, String description, InvoiceLineItem lineItem, Company company, User createdBy) {
-		this.createdOn = createdOn;
-		this.description = description;
-		this.lineItem = lineItem;
-		this.company = company;
-		this.createdBy = createdBy;
-	}
+//	public BillingRecord( Date createdOn, String description, InvoiceLineItem lineItem, Company company, User createdBy) {
+//		this.createdOn = createdOn;
+//		this.description = description;
+//		this.lineItem = lineItem;
+//		this.company = company;
+//		this.createdBy = createdBy;
+//	}
 	
 	abstract double getTotal();
 

@@ -50,7 +50,7 @@ public class InvoiceController {
 	@PostMapping("{clientId}")
 	public Invoice createInvoice(@RequestBody InvoiceView invoiceView, @PathVariable int clientId, Authentication auth) {
 		//gather any existing invoices
-		List<BillingRecord> records = billingRepository.findById(invoiceView.getRecordIds());
+		List<BillingRecord> records = billingRepository.findByIdIn(invoiceView.getRecordIds());
 		User user = (User) auth.getPrincipal();
 		long currTime = Calendar.getInstance().getTimeInMillis();
 		Date now = new Date(currTime);
