@@ -15,7 +15,7 @@ import com.invoicify.Invoices.repositories.BillingRecordRepository;
 import com.invoicify.Invoices.repositories.CompanyRepository;
 
 @RestController
-@RequestMapping("/api/billing-record/flat-fee/")
+@RequestMapping("/api/billing-record/flat-fee")
 public class FlatFeeBillingRecordController {
 	
 	@Autowired
@@ -32,11 +32,6 @@ public class FlatFeeBillingRecordController {
 	//Default Constructor
 	public FlatFeeBillingRecordController() {}
 	
-	//Create method
-	public FlatFeeBillingRecord create() {
-		FlatFeeBillingRecord flatFeeBillingRecord = new FlatFeeBillingRecord();
-		return flatFeeBillingRecord;
-	}
 	
 	// Post Mapping API to create a FlatFeeBillingRecord given a clientid
 	@PostMapping("{clientId}")
@@ -45,8 +40,6 @@ public class FlatFeeBillingRecordController {
 		Company client = companyRepository.findOne(clientId);
 		record.setCompany(client);
 		record.setCreatedBy(user);
-		billingRepository.save(record);
-
 		return billingRepository.save(record);
 	} 
  
