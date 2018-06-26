@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="Invoice")
 
@@ -26,6 +28,7 @@ public class Invoice {
 	@OneToMany(mappedBy="invoice", cascade=CascadeType.ALL)
 	private Set<InvoiceLineItem> lineItems; 
 	
+	@JsonIgnore
 	@ManyToOne
 	private Company company;
 	
@@ -34,12 +37,6 @@ public class Invoice {
 	
 	public Invoice () {}
 	
-	public Invoice (Date createdOn, String invoiceDescription,Set <InvoiceLineItem> lineItems, Company company) {
-		this.createdOn = createdOn;
-		this.invoiceDescription = invoiceDescription;
-		this.lineItems = lineItems; 
-		this.company = company;
-	}
 
 	public int getId() {
 		return id;
