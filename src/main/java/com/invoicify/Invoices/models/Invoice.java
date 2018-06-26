@@ -6,9 +6,11 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -19,8 +21,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Invoice {
 	
 	@Id
-	@GeneratedValue
-	
+	@GeneratedValue(generator = "invoice_sequence_id", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name="invoice_sequence_id", sequenceName="invoice_sequence_id")
 	private int id; 
 	private Date createdOn;
 	private String invoiceDescription; 
