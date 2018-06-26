@@ -5,15 +5,18 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "companies")
 public class Company {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(generator = "company_sequence_id", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name="company_sequence_id", sequenceName="company_sequence_id")
 	private int id;
 	private String name; 
 	
