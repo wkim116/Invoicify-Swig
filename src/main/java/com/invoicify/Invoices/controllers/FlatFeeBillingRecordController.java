@@ -15,7 +15,7 @@ import com.invoicify.Invoices.repositories.BillingRecordRepository;
 import com.invoicify.Invoices.repositories.CompanyRepository;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/billing-record/flat-fee/")
 public class FlatFeeBillingRecordController {
 	
 	@Autowired

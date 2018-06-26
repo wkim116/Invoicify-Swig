@@ -9,6 +9,6 @@ import com.invoicify.Invoices.models.BillingRecord;
 public interface BillingRecordRepository extends JpaRepository<BillingRecord, Integer> {
 	
 	//find by id for controller
-	List<BillingRecord> findById(int[] recordId);
+	List<BillingRecord> findById(Integer[] recordIds);
 
 }

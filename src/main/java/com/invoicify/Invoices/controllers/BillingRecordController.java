@@ -23,8 +23,8 @@ public class BillingRecordController {
 	  }
 	
 	//Get a list of all the invoices in the invoice repo
-		@GetMapping
-		public List<BillingRecord> list() {
-			return billingRepository.findAll();
-		}
+	@GetMapping("")
+	public List<BillingRecord> list() {
+		return billingRepository.findAll();
+	}
 }
